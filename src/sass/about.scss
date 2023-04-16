@@ -1,0 +1,129 @@
+@import './colors';
+
+.about {
+	margin-top: 5rem;
+	padding: 5rem 3rem;
+	.about-cnt {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 3rem;
+		.section-header {
+			text-align: center;
+		}
+		.mission,
+		.story {
+			.mission-content,
+			.story-content {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+				.mission-title,
+				.story-title {
+					color: $headline-color;
+					font-size: 1.7rem;
+				}
+				.mission-text,
+				.story-text {
+					font-size: 1.3rem;
+					color: $text-color;
+				}
+			}
+			img {
+				display: none;
+			}
+		}
+	}
+}
+
+.team {
+	padding: 5rem 3rem;
+	.team-cnt {
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
+		.team-cards {
+			display: flex;
+			flex-direction: column;
+			gap: 4rem;
+			.card {
+				display: flex;
+				gap: 0.8rem;
+				.left {
+					.team-img {
+						width: 8rem;
+						height: 8rem;
+						border-radius: 50%;
+						background-size: cover;
+						background-position: center;
+					}
+				}
+				.right {
+					display: flex;
+					flex-direction: column;
+					gap: 0.7rem;
+					.card-heading {
+						.card-title {
+							font-size: 1.4rem;
+							color: $headline-color;
+						}
+						.card-subtitle {
+							color: $text-color;
+							font-size: 1.1rem;
+						}
+					}
+					.card-content {
+						font-size: 1.2rem;
+					}
+				}
+
+				/* CARDS IMG */
+				$team-photo: team1 team2 team3 team4;
+
+				$p: 1;
+				@each $photo in $team-photo {
+					.team#{$p} {
+						background-image: url('../../dist/img/team\ \(#{$p}\).jpg');
+					}
+					$p: $p + 1;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.about {
+		.about-cnt {
+			.mission {
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+				.mission-img {
+					display: block;
+					max-width: 25rem;
+				}
+			}
+			.story {
+				display: flex;
+				flex-direction: row-reverse;
+				align-items: center;
+				gap: 2rem;
+				.story-img {
+					display: block;
+					max-width: 25rem;
+				}
+			}
+		}
+	}
+	.team {
+		.team-cnt {
+			.team-cards {
+				flex-direction: row;
+				.card {
+					max-width: 50%;
+				}
+			}
+		}
+	}
+}
