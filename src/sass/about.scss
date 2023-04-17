@@ -92,6 +92,89 @@
 	}
 }
 
+.testimonials {
+	padding: 3rem 3rem;
+	.cards-slider {
+		display: flex;
+		gap: 3rem;
+		align-items: center;
+		margin-top: 4rem;
+		overflow-x: scroll;
+		padding: 1rem;
+		.card {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+			width: 100%;
+			min-width: 30rem;
+			max-width: 30rem;
+			min-height: 17rem;
+			max-height: max-content;
+			padding: 2rem;
+			box-shadow: 0 0 10px 1px rgba($color: #000000, $alpha: 0.1);
+			border-radius: 10px;
+			.card-header {
+				display: flex;
+				gap: 1rem;
+				.card-img {
+					background-color: #fff;
+					width: 5rem;
+					height: 5rem;
+					border-radius: 5px;
+					box-shadow: 0 0 2px 1px rgba($color: #000000, $alpha: 0.1);
+					background-size: cover;
+					background-position: top;
+				}
+				.card-title {
+					.name {
+						font-size: 1.5rem;
+					}
+					.username {
+						font-size: 1.1rem;
+						color: $text-color;
+					}
+					.socials {
+						margin-top: 0.5rem;
+						a {
+							font-size: 1.5rem;
+							text-decoration: none;
+							color: black;
+						}
+					}
+				}
+			}
+			.card-content {
+				.card-text {
+					font-size: 1.2rem;
+					font-weight: 300;
+				}
+			}
+
+			$profile-pic: profile1 profile2 profile3 profile4 profile5 profile6;
+
+			$z: 1;
+			@each $profile in $profile-pic {
+				.profile#{$z} {
+					background-image: url('../../dist/img/profile-pic\ \(#{$z}\).jpg');
+				}
+				$z: $z + 1;
+			}
+		}
+	}
+}
+
+.cards-slider::-webkit-scrollbar {
+	background-color: transparent;
+	height: 0.8rem;
+}
+.cards-slider::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+.cards-slider::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: $button-color;
+}
+
 @media (min-width: 768px) {
 	.about {
 		.about-cnt {
